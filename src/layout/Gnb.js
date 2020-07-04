@@ -1,18 +1,40 @@
 import React, {useRef, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import SimpleBar from 'simplebar-react';
-import Selectbox from 'common/select';
-import Searchbox from 'common/searchbox';
+import Selectbox from 'ui_component/select';
+import Searchbox from 'ui_component/searchbox';
 import 'simplebar/dist/simplebar.min.css';
 
 const Gnb = () => {
 	const itemMenuList = useRef(null);
-	// const itemDepth01 = itemMenuList.current.children.children.children;
-	
+	// let itemDepth01;
+
+	const subDepthCloseAll = ()=>{
+		const subDepth = document.querySelectorAll(`.${itemMenuList.current.className} .depth02`);
+		subDepth.forEach((el)=>{
+			el.style.display = 'none';
+		});
+	}
+
 	useEffect(()=>{
-		console.log('menuListWrap = ', itemMenuList);
-		console.log('menuListWrap = ', itemMenuList.current);
-		console.log('childNodes = ', itemMenuList.current.children[0].children);
+		let itemDepth01 = document.querySelectorAll(`.${itemMenuList.current.className} > ul > li > a`);
+
+		itemDepth01.forEach((el)=>{
+			el.addEventListener('click', (e)=> {
+				e.preventDefault();
+				const _this = e.target;
+				const _next = _this.nextElementSibling;
+				const _nextStyle = _next.style;
+
+				if(_nextStyle.display === '' || _nextStyle.display === 'none') {
+					subDepthCloseAll();
+					_nextStyle.display = 'block';
+				}else{
+					_nextStyle.display = 'none';
+				}
+			});
+		});
+
 	});
 
 	return (
