@@ -1,5 +1,19 @@
 @charset "utf-8";
 
 /**************************************************************************************
-** input style
+** Common
 **************************************************************************************/
+[class^="dsigSelectWrap"] {display:inline-block;box-sizing:border-box;position:relative;text-align:left;border:1px solid #646d7b;background-color:#37404d;}
+[class^="dsigSelectWrap"] .selected {display:block;}
+[class^="dsigSelectWrap"] .selected button {position:relaitve;box-sizing:border-box;width:100%;height:30px;padding:2px 20px 0 5px;font-size:12px;color:#cdced1;}
+[class^="dsigSelectWrap"] .selected button:after {display:block;content:"";position:absolute;right:5px;top:50%;margin:-3px 0 0;border-top:6px solid #cdced1;border-left:5px solid transparent;border-right:5px solid transparent;}
+[class^="dsigSelectWrap"] .selectOpt {display:none;position:absolute;top:100%;left:0;right:0;padding:5px 0;border:1px solid #646d7b;background-color:#37404d;}
+[class^="dsigSelectWrap"] .selectOpt li {padding:5px 0 0;}
+[class^="dsigSelectWrap"] .selectOpt li:first-child {padding:0;}
+[class^="dsigSelectWrap"] .selectOpt li button {box-sizing:border-box;height:30px;padding:2px 5px 0;font-size:12px;color:#cdced1;}
+
+[class^="srchItemWrap"] {display:inline-block;box-sizing:border-box;position:relative;}
+[class^="srchItemWrap"] input[type="text"] {box-sizing:border-box;width:100%;height:30px;color:#cdced1;border:none;border-bottom:1px solid #646d7b;background-color:#37404d;}
+[class^="srchItemWrap"] button {position:absolute;right:0;top:0;width:20px;height:30px;}
+[class^="srchItemWrap"] button:after {display:block;content:"";position:absolute;left:50%;top:50%;width:13px;height:13px;background:url('../images/ico_search.gif') no-repeat center;transform:translate(-50%, -50%);}
+[class^="srchItemWrap"] button em {display:block;overflow:hidden;width:0;height:0;line-height:0;}

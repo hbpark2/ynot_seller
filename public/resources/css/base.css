@@ -10,9 +10,9 @@ ul, ol, li{list-style:none}
 
 article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block; margin:0; padding:0;}
 
-body {font-size:14px; line-height:18px; font-weight:400; color:#333; font-family:"NotoSans", "sans-serif"; -webkit-text-size-adjust: none;}
+body {font-size:14px; line-height:18px; font-weight:400; color:#333; font-family:'NotoSans','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif; -webkit-text-size-adjust: none;}
 
-pre, textarea, select {font-family:"NotoSans","sans-serif";}
+pre, textarea, select {font-family:'NotoSans','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;}
 
 fieldset {display:block; margin:0; padding:0; border:0;}
 legend {position:absolute; visibility:hidden; overflow:hidden; width:0; height:0; font-size:0; line-height:0;}
@@ -20,7 +20,7 @@ form {margin:0; padding:0;}
 
 a, a:link, a:visited, a:active, a:hover {text-decoration:none; color:#333; outline:none;}
 
-input, button {padding:0; margin:0; border:0; font-size:14px; vertical-align:middle; background:none; font-family:"NotoSans", "sans-serif";-webkit-appearance:none; outline:none;}
+input, button {padding:0; margin:0; border:0; font-size:14px; vertical-align:middle; background:none; font-family:'NotoSans','Malgun Gothic','맑은 고딕','Apple SD Gothic Neo','돋움',dotum, sans-serif;-webkit-appearance:none; outline:none;}
 button, label {cursor:pointer;}
 
 select::-ms-expand {display:none;} 
@@ -288,38 +288,38 @@ noscript p {margin:0;}
   font-style: normal;
   font-weight: 100;
   src:
-    url("../font/NotoSansKR-Thin.woff2") format("woff2"),
-    url("../font/NotoSansKR-Thin.otf") format("truetype");
+	url("../fonts/NotoSansKR-Thin.woff2") format("woff2"),
+	url("../fonts/NotoSansKR-Thin.otf") format("truetype");
 }
 @font-face {
   font-family: "NotoSans";
   font-style: normal;
   font-weight: 300;
   src:
-    url("../font/NotoSansKR-Light.woff2") format("woff2"),
-    url("../font/NotoSansKR-Light.otf") format("truetype");
+	url("../fonts/NotoSansKR-Light.woff2") format("woff2"),
+	url("../fonts/NotoSansKR-Light.otf") format("truetype");
 }
 @font-face {
   font-family: "NotoSans";
   font-style: normal;
   font-weight: 400;
   src:
-    url("../font/NotoSansKR-Regular.woff2") format("woff2"),
-    url("../font/NotoSansKR-Regular.otf") format("truetype");
+	url("../fonts/NotoSansKR-Regular.woff2") format("woff2"),
+	url("../fonts/NotoSansKR-Regular.otf") format("truetype");
 }
 @font-face {
   font-family: "NotoSans";
   font-style: normal;
   font-weight: 700;
   src:
-    url("../font/NotoSansKR-Medium.woff2") format("woff2"),
-    url("../font/NotoSansKR-Medium.otf") format("truetype");
+	url("../fonts/NotoSansKR-Medium.woff2") format("woff2"),
+	url("../fonts/NotoSansKR-Medium.otf") format("truetype");
 }
 @font-face {
   font-family: "NotoSans";
   font-style: normal;
   font-weight: 800;
   src:
-    url("../font/NotoSansKR-Bold.woff2") format("woff2"),
-    url("../font/NotoSansKR-Bold.otf") format("truetype");
+	url("../fonts/NotoSansKR-Bold.woff2") format("woff2"),
+	url("../fonts/NotoSansKR-Bold.otf") format("truetype");
 }
