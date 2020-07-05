@@ -6,7 +6,7 @@
 #header .logo a {display:block;width:120px;height:55px;background:url('../images/logo_whynot_white.png') no-repeat center;background-size:100% auto;}
 #header .logo a em {display:block;overflow:hidden;width:0;height:0;line-height:0;}
 
-#gnb {position:fixed;left:0;top:55px;bottom:0;width:220px;line-height:20px;background-color:#3c4757;}
+#gnb {position:fixed;left:0;top:55px;bottom:0;width:220px;line-height:20px;background-color:#3c4757;transition:left .6s ease;}
 #gnb .gnbInner {display:block;position:relative;height:100%;}
 #gnb .gnbTop {padding:20px 25px;text-align:center;background-color:#374151;}
 #gnb .userInfo .photo {display:block;overflow:hidden;width:70px;height:70px;margin:0 auto;border-radius:100%;background:url('../images/no-img.jpg') no-repeat center;background-size:100% 100%;;}
@@ -21,11 +21,17 @@
 /* #gnb .gnbListBox {display:block;background} */
 #gnb .gnbListBox > ul {padding:15px 0;}
 #gnb .gnbListBox > ul > li {padding:0 25px;}
-#gnb .gnbListBox > ul > li > a {display:block;padding:10px;font-size:14px;font-weight:500;color:#fff;border-top:1px solid #515d6e;}
+#gnb .gnbListBox > ul > li > a {display:block;position:relative;padding:10px;font-size:14px;font-weight:500;color:#fff;border-top:1px solid #515d6e;}
 #gnb .gnbListBox > ul > li:first-child > a {border-top:none;}
+#gnb .gnbListBox > ul > li > a:after {display:block;content:"";position:absolute;right:10px;top:50%;width:5px;height:5px;border-left:1px solid #949ca6;border-top:1px solid #949ca6;transform:translate(0, -50%) rotate(-135deg);}
+#gnb .gnbListBox > ul > li.active > a:after {transform:translate(0, -50%) rotate(45deg);}
 #gnb .gnbListBox .depth02 {display:none;margin:0 -30px;padding:10px 0;background-color:#39404d;}
 #gnb .gnbListBox .depth02 > ul > li {padding:0 30px;}
 #gnb .gnbListBox .depth02 > ul > li > a {display:block;padding:10px 5px;color:#949ca6;}
+#gnb .btnFold {position:absolute;top:0;left:100%;width:25px;background-color:#3c4757;}
+#gnb .btnFold button {width:100%;height:60px;line-height:60px;text-align:center;}
+#gnb .btnFold button:after {display:inline-block;content:"";width:8px;height:8px;border-top:2px solid #949ca6;border-left:2px solid #949ca6;transform:translate(25%, 0) rotate(-45deg);}
+#gnb .btnFold button em {display:block;overflow:hidden;width:0;height:0;line-height:0;}
+#gnb .btnFold.close button:after {transform:translate(-25%, 0) rotate(140deg);}
 
-
-#container {padding:55px 0 0 220px;}
+#container {padding:55px 0 0 250px;transition:padding .6s ease;}

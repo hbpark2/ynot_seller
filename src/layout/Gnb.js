@@ -1,12 +1,14 @@
 import React, {useRef, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import SimpleBar from 'simplebar-react';
-import Selectbox from 'ui_component/select';
+import Selectbox from 'ui_component/selectbox';
 import Searchbox from 'ui_component/searchbox';
 import 'simplebar/dist/simplebar.min.css';
 
 const Gnb = () => {
+	const gnbEl = useRef(null);
 	const itemMenuList = useRef(null);
+	const btnFold = useRef(null);
 	// let itemDepth01;
 
 	const subDepthCloseAll = ()=>{
@@ -16,29 +18,64 @@ const Gnb = () => {
 		});
 	}
 
+	// S : 검색영역 selectbox value값 임시 설정
+	const selectVal = {
+		'val' : ['구매자명', '구매자연락처', '수취인명', '상품번호', '운송장번호']
+	}
+	// E : 검색영역 selectbox value값 임시 설정
+
 	useEffect(()=>{
+		// let itemDepth01 = document.querySelectorAll(`.${itemMenuList.current.className} > ul > li > a`);
 		let itemDepth01 = document.querySelectorAll(`.${itemMenuList.current.className} > ul > li > a`);
 
 		itemDepth01.forEach((el)=>{
 			el.addEventListener('click', (e)=> {
 				e.preventDefault();
-				const _this = e.target;
-				const _next = _this.nextElementSibling;
-				const _nextStyle = _next.style;
+				var _this = e.target;
+				var _next = _this.nextElementSibling;
+				var _nextStyle = _next.style;
+				var _liItem = _this.closest('.gnbListBox > ul > li');
 
 				if(_nextStyle.display === '' || _nextStyle.display === 'none') {
 					subDepthCloseAll();
 					_nextStyle.display = 'block';
+					_liItem.classList.add('active');
 				}else{
 					_nextStyle.display = 'none';
+					_liItem.classList.remove('active');
 				}
 			});
 		});
 
+		btnFold.current.querySelector('button').addEventListener('click', (e)=>{
+			console.log(e);
+			var classList = btnFold.current.classList;
+			var containerEl = gnbEl.current.nextElementSibling;
+			var hasClass = false;
+
+			classList.forEach((val)=>{
+				if(val === 'close') {
+					hasClass = true;
+				}
+				return false;
+			});
+
+			if(hasClass) {
+				gnbEl.current.style.left = '0';
+				classList.remove('close');
+				containerEl.style.padding = '55px 0 0 250px';
+			}else{
+				gnbEl.current.style.left = '-220px';
+				classList.add('close');
+				containerEl.style.padding = '55px 0 0 30px';
+
+			}
+
+		});
 	});
 
 	return (
-		<nav id="gnb">
+		<nav id="gnb" ref={gnbEl}>
 			<SimpleBar className="gnbInner">
 				<div className="gnbTop">
 					<div className="userInfo">
@@ -49,7 +86,10 @@ const Gnb = () => {
 						<strong className="userId">TIIKI</strong>
 					</div>
 					<div className="searchBox">
-						<Selectbox></Selectbox>
+						<Selectbox
+							defaultVal = {selectVal.val[3]}
+							selectVal = {selectVal}
+						/>
 						<Searchbox></Searchbox>
 					</div>
 				</div>
@@ -322,6 +362,7 @@ const Gnb = () => {
 					</ul>
 				</div>
 			</SimpleBar>
+			<div className="btnFold" ref={btnFold}><button type="button"><em>접기</em></button></div>
 		</nav>
 	);
 }

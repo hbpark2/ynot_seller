@@ -3,17 +3,36 @@
 /**************************************************************************************
 ** Common
 **************************************************************************************/
-[class^="dsigSelectWrap"] {display:inline-block;box-sizing:border-box;position:relative;text-align:left;border:1px solid #646d7b;background-color:#37404d;}
+/* 디자인 셀렉트 박스 */
+[class^="dsigSelectWrap"] {display:inline-block;box-sizing:border-box;position:relative;text-align:left;border:1px solid #646d7b;background-color:#37404d;z-index:1;}
 [class^="dsigSelectWrap"] .selected {display:block;}
 [class^="dsigSelectWrap"] .selected button {position:relaitve;box-sizing:border-box;width:100%;height:30px;padding:2px 20px 0 5px;font-size:12px;color:#cdced1;}
 [class^="dsigSelectWrap"] .selected button:after {display:block;content:"";position:absolute;right:5px;top:50%;margin:-3px 0 0;border-top:6px solid #cdced1;border-left:5px solid transparent;border-right:5px solid transparent;}
-[class^="dsigSelectWrap"] .selectOpt {display:none;position:absolute;top:100%;left:0;right:0;padding:5px 0;border:1px solid #646d7b;background-color:#37404d;}
+[class^="dsigSelectWrap"] .selectOpt {display:none;position:absolute;top:100%;left:-1px;right:-1px;padding:5px 0;border:1px solid #646d7b;background-color:#37404d;}
 [class^="dsigSelectWrap"] .selectOpt li {padding:5px 0 0;}
 [class^="dsigSelectWrap"] .selectOpt li:first-child {padding:0;}
 [class^="dsigSelectWrap"] .selectOpt li button {box-sizing:border-box;height:30px;padding:2px 5px 0;font-size:12px;color:#cdced1;}
+[class^="dsigSelectWrap"].active .selected button:after {transform:rotate(-180deg);}
 
+/* 검색 입력박스 */
 [class^="srchItemWrap"] {display:inline-block;box-sizing:border-box;position:relative;}
 [class^="srchItemWrap"] input[type="text"] {box-sizing:border-box;width:100%;height:30px;color:#cdced1;border:none;border-bottom:1px solid #646d7b;background-color:#37404d;}
 [class^="srchItemWrap"] button {position:absolute;right:0;top:0;width:20px;height:30px;}
 [class^="srchItemWrap"] button:after {display:block;content:"";position:absolute;left:50%;top:50%;width:13px;height:13px;background:url('../images/ico_search.gif') no-repeat center;transform:translate(-50%, -50%);}
 [class^="srchItemWrap"] button em {display:block;overflow:hidden;width:0;height:0;line-height:0;}
+
+/* page title wrap */
+[class^="pageTitleWrap"] {box-sizing:border-box;height:60px;padding:15px 20px 14px;border-left:1px solid #e3e7ee;border-bottom:1px solid #e3e7ee;background-color:#fff;}
+[class^="pageTitleWrap"] .pageTitle {display:inline-block;padding:2px 0 0;line-height:28px;font-size:20px;font-weight:500;vertical-align:middle;}
+[class^="pageTitleWrap"] .caution {display:inline-block;position:relative;margin:0 0 0 10px;padding:2px 0 0 10px;line-height:28px;font-size:14px;color:#ff545c;vertical-align:middle;}
+[class^="pageTitleWrap"] .caution:after {display:block;content:"";position:absolute;left:0;top:11px;width:5px;height:5px;border-radius:5px;background-color:#ff545c;}
+[class^="pageTitleWrap"] [class^="tooltipWrap"] {margin:0 0 0 5px;}
+
+/* tooltip guide style */
+[class^="tooltipWrap"] {display:inline-block;position:relative;vertical-align:middle;}
+[class^="tooltipWrap"] button {width:15px;height:15px;background:url('../images/ico_tip.png') no-repeat center;}
+[class^="tooltipWrap"] button em {display:block;overflow:hidden;width:0;height:0;line-height:0}
+[class^="tooltipWrap"] .tipCont {display:none;position:absolute;top:20px;left:-10px;width:500px;padding:20px;border:1px solid #e3e7ee;background-color:#fff;}
+[class^="tooltipWrap"] .tipCont ul li {position:relative;margin:10px 0 0;padding:0 0 0 7px;line-height:20px;font-size:13px;font-weight:300;color:#767a83;word-break:keep-all;}
+[class^="tooltipWrap"] .tipCont ul li:first-child {margin:0;}
+[class^="tooltipWrap"] .tipCont ul li:before {display:block;content:"";position:absolute;left:0;top:6px;width:2px;height:2px;background-color:#767a83;}
