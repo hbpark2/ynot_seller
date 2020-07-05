@@ -1,11 +1,11 @@
 import React, {useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
-const Tooltip = ({tooltip}) => {
+const Tooltip = ({children}) => {//children 커스텀 태그안 마크업 DOM요소를 가지고 온다
 	const tooltipWrap = useRef(null);
 	const btn = useRef(null);
 	const tipConts = useRef(null);
-	
+
 	useEffect(()=> {
 		const contsStyle = tipConts.current.style;
 		const domClickFn = ()=>{
@@ -14,7 +14,6 @@ const Tooltip = ({tooltip}) => {
 		}
 		
 		btn.current.addEventListener('click', (e)=> {
-			console.log('click');
 			e.stopPropagation();
 			console.log();
 			if(contsStyle.display === '' || contsStyle.display === 'none') {
@@ -29,20 +28,17 @@ const Tooltip = ({tooltip}) => {
 
 	return (
 		<span className="tooltipWrap" ref={tooltipWrap}>
+			{/* {children} */}
 			<button type="button" ref={btn}><em>팁가이드</em></button>
 			<div className="tipCont" ref={tipConts}>
-				<ul>
-					{tooltip.tip.map((val, i)=>{
-						return <li key={i}>{val}</li>;
-					})}
-				</ul>
+				{children}
 			</div>
 		</span>
 	);
 }
 
 Tooltip.propTypes = {
-	tooltip : PropTypes.object.isRequired,
+	// tooltip : PropTypes.object.isRequired,
 }
 
 export default Tooltip;

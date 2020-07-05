@@ -7,9 +7,9 @@ const PageTitle = ({title, caut_title, tooltip}) => {
 		<div className="pageTitleWrap">
 			<h2 className="pageTitle">{title}</h2>
 			{tooltip && (
-				<Tooltip
-					tooltip={tooltip}
-				/>
+				<Tooltip>
+					{tooltip}
+				</Tooltip>
 			)}
 			{caut_title && (
 				<span className="caution">{caut_title}</span>
@@ -20,7 +20,7 @@ const PageTitle = ({title, caut_title, tooltip}) => {
 
 PageTitle.propTypes = {
 	caut_title : PropTypes.string,
-	tooltip : PropTypes.object,
+	tooltip : PropTypes.any,
 	title : PropTypes.string.isRequired,
 }
 
