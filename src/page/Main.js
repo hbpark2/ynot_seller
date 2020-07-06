@@ -1,5 +1,6 @@
 import React from 'react';
 import PageTitle from 'ui_component/page_title'
+import RegFoldItemBox from 'ui_component/regist_folding_box'
 
 
 const Main = () => {
@@ -18,18 +19,31 @@ const Main = () => {
 				}
 			/>
 
-			<section className="regItemWrap">
-				<div className="titBox">
-					<strong className="tit guideTip">
-						카테고리
-						<button type="button" className="btnHelpTip"><em>도움말</em></button>
-					</strong>
-					<button type="button" className="btnFold"><em>닫기</em></button>
-				</div>
-				<div className="regBox">
-
-				</div>
-			</section>
+			<RegFoldItemBox
+				title={'입력 카테고리 타이틀영역'}
+				// helpTip={true}
+			>
+				<span className="inptxtItem">
+					<input type="text" />
+					<span className="limitLength">
+						<em>9999</em> /
+						<span>1000</span>
+					</span>
+				</span>
+			</RegFoldItemBox>
+			
+			<RegFoldItemBox
+				title={'입력 카테고리 타이틀영역02'}
+				helpTip={true}
+			>
+				<span className="inptxtItem">
+					<input type="text" />
+					<span className="limitLength">
+						<em>9999</em> /
+						<span>1000</span>
+					</span>
+				</span>
+			</RegFoldItemBox>
 		</div>
 	);
 }
