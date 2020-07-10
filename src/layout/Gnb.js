@@ -96,13 +96,11 @@ const Gnb = () => {
 				<div className="gnbListBox" ref={itemMenuList}>
 					<ul>
 						<li>
-							<Link to="#">depth01</Link>
+							<Link to="guide">guide</Link>
 							<div className="depth02">
 								<ul>
-									<li><Link to="#">depth01_01</Link></li>
-									<li><Link to="#">depth01_02</Link></li>
-									<li><Link to="#">depth01_03</Link></li>
-									<li><Link to="#">depth01_04</Link></li>
+									<li><Link to="guide_item">item guide</Link></li>
+									<li><Link to="register_template">register guide</Link></li>
 								</ul>
 							</div>
 						</li>

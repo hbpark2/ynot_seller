@@ -1,5 +1,7 @@
 import React from "react";
 import Main from 'page/Main';
+import FormItem from 'guide/FormItem';
+import RegTemplate from 'guide/register_box_template';
 import {
 	BrowserRouter as BRouter,
 	Route,
@@ -18,6 +20,8 @@ const RouterSet = () => {
 			<div id="container">
 				<Switch>
 					<Route path="/" exact component={Main} />
+					<Route path="/guide_item" exact component={FormItem} />
+					<Route path="/register_template" exact component={RegTemplate} />
 					<Redirect from="*" to="/" />
 				</Switch>
 			</div>
