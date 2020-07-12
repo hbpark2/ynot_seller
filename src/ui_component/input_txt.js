@@ -1,17 +1,20 @@
 import React, {useRef, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
-const InputTxt = ({maxLeng}) => {
+const InputTxt = ({minLeng, maxLeng, ver}) => {
+	const verName = ver ? ver : 'inptxtItem';
 	const iptWrap = useRef(null);
 	const ipt = useRef(null);
 	const writeLeng = useRef(null);
 
 	const initFn = ()=> {
-		if(maxLeng) {
-			writeLeng.current.textContent = ipt.current.value.length;
-		}else{
-			iptWrap.current.classList.add('inptxtItem02');
+		if(verName === 'inptxtItem02') {
+			iptWrap.current.classList.add(ver);
 			iptWrap.current.classList.remove('inptxtItem');
+		}else{
+			if(maxLeng) {
+				writeLeng.current.textContent = ipt.current.value.length;
+			}
 		}
 	}
 
@@ -22,13 +25,8 @@ const InputTxt = ({maxLeng}) => {
 		ipt.current.addEventListener('keyup', (e)=> {
 			// console.log('keyup');
 			var length = e.target.value.length;
-			if(maxLeng) {
-				if(length > maxLeng) {
-					e.target.value = e.target.value.substring(0, maxLeng);
-					writeLeng.current.textContent = length;
-				}else{
-					writeLeng.current.textContent = length;
-				}
+			if(maxLeng && verName === 'inptxtItem') {
+				writeLeng.current.textContent = length;
 			}
 		});
 		ipt.current.addEventListener('focusin', (e)=> {
@@ -43,8 +41,9 @@ const InputTxt = ({maxLeng}) => {
 
 	return (
 		<span className="inptxtItem" ref={iptWrap}>
-			<input type="text" ref={ipt} />
-			{maxLeng && (
+			{/* input text maxlength default length 524288 */}
+			<input type="text" ref={ipt} minLength={minLeng ? minLeng : 0} maxLength={maxLeng ? maxLeng : 524288} />
+			{maxLeng && verName === 'inptxtItem' && (
 				<span className="limitLength">
 					<em ref={writeLeng}></em> /
 					<span>{maxLeng}</span>
@@ -55,7 +54,9 @@ const InputTxt = ({maxLeng}) => {
 }
 
 InputTxt.propTypes = {
+	minLeng : PropTypes.number,
 	maxLeng : PropTypes.number,
+	ver : PropTypes.string,
 }
 
 export default InputTxt;

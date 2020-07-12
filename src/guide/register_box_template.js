@@ -32,12 +32,26 @@ const RegTemplate = () => {
 
 			<RegFoldItemBox
 				title={'입력 카테고리 타이틀영역02'}
-				helpTip={true}
+				helpTip={
+					<div className="layerTxt">
+						취급 상품과 관련된&nbsp;카테고리를 선택해야 하며, 카테고리명 검색 탭에서 등록하고자 하는&nbsp;상품군의 카테고리를 선택하여 등록해 주시면 됩니다.
+					</div>
+				}
 			>
 				<InputTxt
 					maxLeng={9999}
 				/>
 			</RegFoldItemBox>
+
+			<div className="fixedBtnBox">
+				<div className="btnR">
+					<button type="button" className="btnItemL03"><span>미리보기</span></button>
+					<button type="button" className="btnItemL03"><span>임시저장하기</span></button>
+					<button type="button" className="btnItemL02"><span>저장하기</span></button>
+					<button type="button" className="btnItemL"><span>취소하기</span></button>
+				</div>
+			</div>
+
 		</div>
 	);
 }

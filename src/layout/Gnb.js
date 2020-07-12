@@ -48,9 +48,11 @@ const Gnb = () => {
 		});
 
 		btnFold.current.querySelector('button').addEventListener('click', (e)=>{
-			console.log(e);
+			// console.log(e);
 			var classList = btnFold.current.classList;
 			var containerEl = gnbEl.current.nextElementSibling;
+			var footerEl = document.querySelector('#footer');
+			var fixedBtnbox = document.querySelector('.fixedBtnBox');
 			var hasClass = false;
 
 			classList.forEach((val)=>{
@@ -63,12 +65,15 @@ const Gnb = () => {
 			if(hasClass) {
 				gnbEl.current.style.left = '0';
 				classList.remove('close');
-				containerEl.style.padding = '55px 0 0 250px';
+				containerEl.style.paddingLeft = '250px';
+				footerEl.style.paddingLeft = '250px';
+				fixedBtnbox.style.left = '220px'
 			}else{
 				gnbEl.current.style.left = '-220px';
 				classList.add('close');
-				containerEl.style.padding = '55px 0 0 30px';
-
+				containerEl.style.paddingLeft = '30px';
+				footerEl.style.paddingLeft = '30px';
+				fixedBtnbox.style.left = '0'
 			}
 
 		});
@@ -99,8 +104,10 @@ const Gnb = () => {
 							<Link to="guide">guide</Link>
 							<div className="depth02">
 								<ul>
-									<li><Link to="guide_item">item guide</Link></li>
 									<li><Link to="register_template">register guide</Link></li>
+									<li><Link to="form_item">form item guide</Link></li>
+									<li><Link to="table_item">table item guide</Link></li>
+									<li><Link to="tab_item">tab item guide</Link></li>
 								</ul>
 							</div>
 						</li>
