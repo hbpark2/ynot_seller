@@ -104,15 +104,18 @@
 [class^="fixedBtnBox"] [class^="btnItemL"] + [class^="btnItemL"] {margin:0 0 0 5px;}
 
 /* table style */
-[class^="tblWrap"] {overflow-y:hidden;overflow-x:auto;width:100%;text-align:left;}
+[class^="tblWrap"] {overflow-y:hidden;overflow-x:auto;width:100%;text-align:left;border:1px solid #dbdde2;}
 [class^="tblWrap"] .tl {text-align:left !important;}
 [class^="tblWrap"] .tc {text-align:center !important;}
 [class^="tblWrap"] .tr {text-align:right !important;}
-[class^="tblWrap"] table {table-layout:fixed;min-width:100%;border-collapse:collapse;}
+[class^="tblWrap"] table {min-width:100%;border-collapse:collapse;}
 [class^="tblWrap"] table caption {display:block;overflow:hidden;width:0;height:0;line-height:0;}
 [class^="tblWrap"] table thead {background-color:#aed4ff;}
-[class^="tblWrap"] table thead tr th {padding:10px;line-height:20px;font-size:14px;border:1px solid #dbdde2;}
-[class^="tblWrap"] table tbody tr td {padding:10px;line-height:20px;font-size:12px;border:1px solid #dbdde2;}
+[class^="tblWrap"] table thead tr th {padding:10px;line-height:20px;font-size:14px;border:1px solid #dbdde2;border-top:none;border-right:none;}
+[class^="tblWrap"] table thead tr th:first-child {border-left:none;}
+[class^="tblWrap"] table tbody tr td {padding:10px;line-height:20px;font-size:12px;border:1px solid #dbdde2;border-right:none;white-space:nowrap;}
+[class^="tblWrap"] table tbody tr td:first-child {border-left:none;}
+[class^="tblWrap"] table tbody tr:last-child td {border-bottom:none;}
 
 [class^="tblWrap_tc"] {text-align:center;}
 [class^="tblWrap_tr"] {text-align:right;}
@@ -120,6 +123,24 @@
 /* nodata */
 [class^="nodata"] {padding:50px 10px;}
 [class^="nodata"] .tit {display:block;padding:70px 0 0;line-height:20px;font-size:16px;text-align:center !important;background:url('../images/ico_nodata.gif') no-repeat center top;background-size:50px;}
+
+/* tab box */
+[class^="tabWrap"] {margin:0 -20px;}
+[class^="tabWrap"] .tabItem {padding:0 0 20px;border-bottom:1px solid #dbdde2;}
+[class^="tabWrap"] .tabItem [class^="cmptSwiper"] {padding:0 20px;}
+[class^="tabWrap"] .tabItem [class^="cmptSwiper"] .swiper-wrapper .swiper-slide {position:relative;}
+[class^="tabWrap"] .tabItem [class^="cmptSwiper"] .swiper-wrapper .swiper-slide:after {display:block;content:"";position:absolute;left:-1px;top:50%;width:1px;height:10px;margin:-5px 0 0;background-color:#dbdde2}
+[class^="tabWrap"] .tabItem [class^="cmptSwiper"] .swiper-wrapper .swiper-slide button {padding:5px 20px;line-height:20px;font-size:16px;}
+[class^="tabWrap"] .tabItem [class^="cmptSwiper"] .swiper-wrapper .swiper-slide.active button {position:relative;color:#0035bd;}
+[class^="tabWrap"] .tabItem [class^="cmptSwiper"] .swiper-wrapper .swiper-slide.active button:after {display:block;content:"";position:absolute;left:20px;right:20px;bottom:0;height:2px;background-color:#0035bd;}
+[class^="tabWrap"] [class^="tabConts"] {display:none;margin:20px 20px 0;}
+
+/**************************************************************************************
+** react-id-swiper default style setting
+**************************************************************************************/
+[class^="cmptSwiper"] .swiper-container {overflow:hidden;}
+[class^="cmptSwiper"] .swiper-wrapper {overflow:hidden;position:relative;width:10000em;}
+[class^="cmptSwiper"] .swiper-wrapper .swiper-slide {float:left;}
 
 /**************************************************************************************
 ** Layer Popup

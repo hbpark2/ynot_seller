@@ -1,5 +1,5 @@
 import React, {useRef, useEffect} from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
 const Tooltip = ({children}) => {//children 커스텀 태그안 마크업 DOM요소를 가지고 온다
 	const tooltipWrap = useRef(null);
@@ -36,8 +36,8 @@ const Tooltip = ({children}) => {//children 커스텀 태그안 마크업 DOM요
 	);
 }
 
-// Tooltip.propTypes = {
-// 	// tooltip : PropTypes.object.isRequired,
-// }
+Tooltip.propTypes = {
+	children : PropTypes.any.isRequired,
+}
 
 export default Tooltip;

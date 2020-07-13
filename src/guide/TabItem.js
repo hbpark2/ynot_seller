@@ -1,6 +1,7 @@
 import React from 'react';
 import PageTitle from 'ui_component/page_title';
 import RegFoldItemBox from 'ui_component/regist_folding_box';
+import TabCmpt from 'ui_component/tab_box';
 
 const TableItem = () => {
 	
@@ -21,7 +22,37 @@ const TableItem = () => {
 			<RegFoldItemBox
 				title={'tab default'}
 			>
-				<></>
+				<TabCmpt
+					setIndex={3}
+				>
+					<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'red'}}>
+						TAB CONTENTS #01
+					</div>
+					<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'blue'}}>
+						TAB CONTENTS #02
+					</div>
+					<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'green'}}>
+						TAB CONTENTS #03
+					</div>
+					<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'orange'}}>
+						TAB CONTENTS #04
+					</div>
+					<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'yellow'}}>
+						TAB CONTENTS #05
+					</div>
+					<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'pink'}}>
+						TAB CONTENTS #06
+					</div>
+					<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'blueviolet'}}>
+						TAB CONTENTS #07
+					</div>
+					<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'teal'}}>
+						TAB CONTENTS #08
+					</div>
+					<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'green'}}>
+						TAB CONTENTS #09
+					</div>
+				</TabCmpt>
 			</RegFoldItemBox>
 
 		</div>
