@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-#root {position:relative;box-sizing:border-box;height:100%;min-height:100%;height:auto !important;background-color:#eaeef3;}
+#root {position:relative;box-sizing:border-box;height:100%;min-height:100%;height:auto !important;padding:0 0 200px;background-color:#eaeef3;}
 
 #header {position:fixed;left:0;top:0;box-sizing:border-box;width:100%;padding:0 20px;background-color:#000;z-index:50;}
 #header .logo a {display:block;width:120px;height:55px;background:url('../images/logo_whynot_white.png') no-repeat center;background-size:100% auto;}
@@ -36,4 +36,4 @@
 
 #container {padding:55px 0 0 250px;transition:padding .6s ease;}
 
-#footer {padding:0 0 70px 250px;transition:padding .6s ease;}
+#footer {position:absolute;left:220px;right:0;bottom:0;padding:0 0 70px;line-height:60px;font-size:20px;font-weight:500;color:#fff;text-align:center;background-color:#000;transition:left .6s ease;}

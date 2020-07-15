@@ -4,8 +4,7 @@ import RegFoldItemBox from 'ui_component/regist_folding_box';
 import TabCmpt from 'ui_component/tab_box';
 
 const TableItem = () => {
-	
-	
+
 	return (
 		<div className="contents">
 			<PageTitle
@@ -21,9 +20,17 @@ const TableItem = () => {
 
 			<RegFoldItemBox
 				title={'tab default'}
+				tooltip={
+					<p>
+						기본 탭박스 메뉴와 해당 컨텐츠가 한화면에 같이 그려짐
+					</p>
+				}
 			>
 				<TabCmpt
 					setIndex={3}
+					tabName={
+						['Slide #1', 'Slide #2', 'Slide #3', 'Slide #4', 'Slide #5', 'Slide #6', 'Slide #7', 'Slide #8', 'Slide #9']
+					}
 				>
 					<div className="tabConts" style={{'padding' : '20px', 'backgroundColor' : 'red'}}>
 						TAB CONTENTS #01
@@ -53,6 +60,12 @@ const TableItem = () => {
 						TAB CONTENTS #09
 					</div>
 				</TabCmpt>
+			</RegFoldItemBox>
+			
+			<RegFoldItemBox
+				title={'tab version02'}
+			>
+				
 			</RegFoldItemBox>
 
 		</div>

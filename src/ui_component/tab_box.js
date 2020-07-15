@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import Swiper from 'react-id-swiper';
 import PropTypes from 'prop-types';
 
-const TabCmpt = ({children, setIndex}) => {
+const TabCmpt = ({children, setIndex, tabName}) => {
 	let swiperLib = null;
 	const activeIndex = setIndex || 0;
 	const swiperRef = useRef(null);
@@ -69,15 +69,11 @@ const TabCmpt = ({children, setIndex}) => {
 			<div className="tabItem">
 				<div className="cmptSwiper">
 					<Swiper {...params} ref={swiperRef}>
-						<li><button type="button">Slide #1</button></li>
-						<li><button type="button">Slide #2</button></li>
-						<li><button type="button">Slide #3</button></li>
-						<li><button type="button">Slide #4</button></li>
-						<li><button type="button">Slide #5</button></li>
-						<li><button type="button">Slide #6</button></li>
-						<li><button type="button">Slide #7</button></li>
-						<li><button type="button">Slide #8</button></li>
-						<li><button type="button">Slide #9</button></li>
+						{
+							tabName.map((val, i)=>{
+							return <li key={i}><button type="button">{val}</button></li>;
+							})
+						}
 					</Swiper>
 				</div>
 			</div>
@@ -89,6 +85,7 @@ const TabCmpt = ({children, setIndex}) => {
 }
 
 TabCmpt.propTypes = {
+	tabName : PropTypes.array.isRequired,
 	children : PropTypes.any.isRequired,
 	setIndex : PropTypes.number,
 }

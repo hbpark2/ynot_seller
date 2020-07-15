@@ -66,13 +66,13 @@ const Gnb = () => {
 				gnbEl.current.style.left = '0';
 				classList.remove('close');
 				containerEl.style.paddingLeft = '250px';
-				footerEl.style.paddingLeft = '250px';
+				footerEl.style.left = '220';
 				fixedBtnbox.style.left = '220px'
 			}else{
 				gnbEl.current.style.left = '-220px';
 				classList.add('close');
 				containerEl.style.paddingLeft = '30px';
-				footerEl.style.paddingLeft = '30px';
+				footerEl.style.left = '0';
 				fixedBtnbox.style.left = '0'
 			}
 

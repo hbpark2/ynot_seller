@@ -10,17 +10,19 @@ const Tooltip = ({children}) => {//children 커스텀 태그안 마크업 DOM요
 		const contsStyle = tipConts.current.style;
 		const domClickFn = ()=>{
 			contsStyle.display = 'none';
+			contsStyle.zIndex = 0;
 			document.removeEventListener('click', domClickFn);
 		}
 		
 		btn.current.addEventListener('click', (e)=> {
 			e.stopPropagation();
-			console.log();
 			if(contsStyle.display === '' || contsStyle.display === 'none') {
 				contsStyle.display = 'block';
+				contsStyle.zIndex = 10;
 				document.addEventListener('click', domClickFn);
 			}else{
 				contsStyle.display = 'none';
+				contsStyle.zIndex = 0;
 				document.removeEventListener('click', domClickFn);
 			}
 		});
