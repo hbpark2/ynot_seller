@@ -65,7 +65,7 @@ const TableItem = () => {
 			<RegFoldItemBox
 				title={'tab version02'}
 			>
-				
+				<div></div>
 			</RegFoldItemBox>
 
 		</div>
