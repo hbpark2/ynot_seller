@@ -4,6 +4,7 @@ import FormItem from 'guide/FormItem';
 import TableItem from 'guide/TableItem';
 import TabItem from 'guide/TabItem';
 import RegTemplate from 'guide/register_box_template';
+import ProductReg from 'page/prdReg/ProductReg';
 import {
 	BrowserRouter as BRouter,
 	Route,
@@ -22,10 +23,11 @@ const RouterSet = () => {
 			<div id="container">
 				<Switch>
 					<Route path="/" exact component={Main} />
-					<Route path="/register_template" exact component={RegTemplate} />
-					<Route path="/form_item" exact component={FormItem} />
-					<Route path="/table_item" exact component={TableItem} />
-					<Route path="/tab_item" exact component={TabItem} />
+					<Route path="/register_template" component={RegTemplate} />
+					<Route path="/form_item" component={FormItem} />
+					<Route path="/table_item" component={TableItem} />
+					<Route path="/tab_item" component={TabItem} />
+					<Route path="/regPrd" component={ProductReg} />
 					<Redirect from="*" to="/" />
 				</Switch>
 			</div>

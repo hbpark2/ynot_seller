@@ -67,13 +67,14 @@ const Gnb = () => {
 				classList.remove('close');
 				containerEl.style.paddingLeft = '250px';
 				footerEl.style.left = '220';
-				fixedBtnbox.style.left = '220px'
+				console.log(fixedBtnbox);
+				if(fixedBtnbox) fixedBtnbox.style.left = '220px';
 			}else{
 				gnbEl.current.style.left = '-220px';
 				classList.add('close');
 				containerEl.style.paddingLeft = '30px';
 				footerEl.style.left = '0';
-				fixedBtnbox.style.left = '0'
+				if(fixedBtnbox) fixedBtnbox.style.left = '0';
 			}
 
 		});
@@ -112,13 +113,10 @@ const Gnb = () => {
 							</div>
 						</li>
 						<li>
-							<Link to="#">depth02</Link>
+							<Link to="#">상품관리</Link>
 							<div className="depth02">
 								<ul>
-									<li><Link to="#">depth02_01</Link></li>
-									<li><Link to="#">depth02_02</Link></li>
-									<li><Link to="#">depth02_03</Link></li>
-									<li><Link to="#">depth02_04</Link></li>
+									<li><Link to="regPrd">상품등록</Link></li>
 								</ul>
 							</div>
 						</li>

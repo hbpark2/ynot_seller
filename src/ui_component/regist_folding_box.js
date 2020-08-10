@@ -47,7 +47,7 @@ const RegFoldItemBox = ({children, title, helpTip, tooltip, essential, closed}) 
 				{helpTip && (
 					<LayerPopup
 						btnName={'도움말팝업'}
-						title={'도음말'}
+						title={'도움말'}
 					>
 						<div className="layerContainer">
 							<div className="layerConts">
